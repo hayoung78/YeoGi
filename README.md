@@ -162,7 +162,7 @@ alt="yeogi logo" />
   <tr>
     <td rowspan="2">Week-04</td>
     <td>06.29 - 06.30 </td>
-    <td>on progress</td>
+    <td>✔️</td>
   </tr>
   <tr>
     <td>07.01 - 07.07 </td>

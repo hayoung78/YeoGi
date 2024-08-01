@@ -14,7 +14,7 @@ const GenderSelect = ({ selectedGender, onGenderChange }: GenderSelectProps) => 
                         value="F"
                         checked={selectedGender === "F"}
                         onChange={() => onGenderChange("F")}
-                        className="w-[18px] h-[18px] cursor-pointer appearance-none ring-1 focus:ring-BRAND-500 checked:bg-BRAND-50 border-[1px] border-GREY-50 rounded-full"
+                        className="w-5 h-5 cursor-pointer appearance-none ring-1 focus:ring-BRAND-500 checked:bg-BRAND-50 border-[1px] border-GREY-50 rounded-full"
                     />
                     <span className="text-GREY-50 ml-2 text-xxs">여성</span>
                 </label>
@@ -25,7 +25,7 @@ const GenderSelect = ({ selectedGender, onGenderChange }: GenderSelectProps) => 
                         value="M"
                         checked={selectedGender === "M"}
                         onChange={() => onGenderChange("M")}
-                        className="w-[18px] h-[18px] cursor-pointer appearance-none ring-1 focus:ring-BRAND-500 checked:bg-BRAND-50 border-[1px] border-GREY-50 rounded-full"
+                        className="w-5 h-5 cursor-pointer appearance-none ring-1 focus:ring-BRAND-500 checked:bg-BRAND-50 border-[1px] border-GREY-50 rounded-full"
                     />
                     <span className="text-GREY-50 ml-2 text-xxs">남성</span>
                 </label>

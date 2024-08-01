@@ -125,7 +125,7 @@ const AddInfoForm = ({ data }: { data: SocialSignupResponse }) => {
                 title="회원가입"
                 context={
                     formState === "success"
-                        ? "축하합니다! 회원가입이 성공적으로 완료되었습니다."
+                        ? "축하합니다! 회원가입이 완료되었습니다."
                         : "죄송합니다. 회원가입에 실패했습니다."
                 }
                 isOpen={isOpen}

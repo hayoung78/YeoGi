@@ -50,7 +50,9 @@ alt="yeogi logo" />
 <table align="center">
   <tr>
     <td>
+      <a href="https://www.behance.net/saltkik">
         <img src="https://github.com/mobi-projects/yeogi-client/assets/134191817/a23b2573-f289-4865-9164-6dd4e8894e9e" width="120px" height="120px"/>
+      </a>
     </td>
   </tr>
   <tr>

@@ -89,7 +89,6 @@ export type SearchResultsProps = {
 
 export type ButtonProps = ButtonHTMLAttributes<HTMLButtonElement> &
     VariantProps<typeof buttonStyle> & {
-        children?: ReactNode
         isActive?: boolean
     }
 

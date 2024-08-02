@@ -26,6 +26,7 @@ const Button = ({
     onClick,
     children,
     isActive = false,
+    disabled,
     ...props
 }: ButtonProps) => {
     return (
@@ -38,8 +39,10 @@ const Button = ({
                     textColor: isActive ? textColor : textColor,
                 }),
                 className,
+                disabled ? "opacity-50 cursor-not-allowed" : "",
             )}
             onClick={onClick}
+            disabled={disabled}
             {...props}
         >
             {children}

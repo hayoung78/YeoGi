@@ -1,5 +1,5 @@
 import Button from "@/components/commons/button"
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import { SelectedGender, SocialSignupRequest } from "./type"
 import SignupAgeButton from "./ageButton"
 import GenderSelect from "./genderSelect"
@@ -14,6 +14,7 @@ import SuccessToFailModal from "@/components/commons/successToFailModal"
 const AddInfoForm = ({ data }: { data: SocialSignupResponse }) => {
     const [selectedGender, setSelectedGender] = useState<SelectedGender>("F")
     const [selectedAge, setSelectedAge] = useState("")
+    const [nicknameMessage, setNicknameMessage] = useState<string | null>(null)
     const {
         register,
         handleSubmit,
@@ -45,9 +46,19 @@ const AddInfoForm = ({ data }: { data: SocialSignupResponse }) => {
         const nickname = getValues("nickname")
         if (nickname) {
             checkNickname(nickname)
+            setNicknameMessage(null) // 중복 확인 시 기존 메시지 초기화
         }
     }
-
+    // useEffect를 사용하여 message나 errors.nickname이 변경될 때 nicknameMessage 업데이트
+    useEffect(() => {
+        if (message) {
+            setNicknameMessage(message)
+        } else if (errors.nickname) {
+            setNicknameMessage(errors.nickname.message as string)
+        } else {
+            setNicknameMessage(null)
+        }
+    }, [message, errors.nickname])
     return (
         <div className="min-h-screen flex items-center justify-center">
             <div className="flex flex-col justify-center w-[496px] h-[604px] rounded-2xl bg-SYSTEM-else p-12">
@@ -87,15 +98,16 @@ const AddInfoForm = ({ data }: { data: SocialSignupResponse }) => {
                                         중복 확인
                                     </Button>
                                 </div>
-                                {message && (
+                                {nicknameMessage && (
                                     <div
-                                        className={`text-[13px] flex flex-col  ${message.includes("사용 가능한") ? "text-BRAND-50" : "text-SYSTEM-error"}`}
+                                        className={`text-[13px] flex flex-col ${
+                                            nicknameMessage.includes("사용 가능한")
+                                                ? "text-BRAND-50"
+                                                : "text-SYSTEM-error"
+                                        }`}
                                     >
-                                        {message}
+                                        {nicknameMessage}
                                     </div>
-                                )}
-                                {errors.nickname && (
-                                    <div className=" text-[13px]  text-SYSTEM-error">{errors.nickname.message}</div>
                                 )}
                             </div>
                         </div>

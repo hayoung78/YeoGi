@@ -1,6 +1,5 @@
 <div align="center">
 
-
 <img src="https://github.com/mobi-projects/yeogi-client/assets/134191817/6ce60050-7ab0-44a6-b51d-f87d19485e39" 
 alt="yeogi logo" />
 
